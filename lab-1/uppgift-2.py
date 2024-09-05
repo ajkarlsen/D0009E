@@ -22,4 +22,5 @@ def sockerkaka(antal):
     print(f"\nDet tar totalt {tid_blanda(antal) + tid_grädda(antal)} minuter att göra kakan\n")
 
 sockerkaka(4)
+print()
 sockerkaka(7)
