@@ -10,7 +10,7 @@ def recept(antal):
     print(f"Ingredienser som behövs för en sockerkaka för {antal} personer:")
     for ingrediens in ingredienser:
         print(f"{ingrediens},")
-    
+
 def tid_blanda(antal):
     return 10+antal
 

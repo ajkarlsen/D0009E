@@ -28,4 +28,3 @@ def tvarsumman2(tal):
         tal = tal // 10
     return resultat
 
-
