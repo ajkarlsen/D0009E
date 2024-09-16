@@ -16,7 +16,7 @@ def main():
             break
         elif choice == "1":
             insert()
-        elif choice == "":
+        elif choice == "2":
             lookup()
         else: 
             print("Invalid input")
