@@ -4,12 +4,12 @@ def derivative(f, x, h):
     ans = (1.0/(2*h))*(f(x+h)-f(x-h)) 
     return ans 
 
-def solve(f, x0, h):
+def solve(f, x0, h): 
     while True:
-        var = x0 - (f(x0)) / derivative(f, x0, h)
-        if abs(var - x0) < h:
-            return var
-        x0 = var
+        var = x0 - (f(x0)) / derivative(f, x0, h) #Kör x0 - funktionen genom dess derivata och sparar detta i en ny variabel (var)
+        if abs(var - x0) < h: #Kollar om beloppet minus den ursprungliga x0 är mindre än det tillåtna felet h
+            return var #Ifall detta är fallet bryts loopen och funktionen returnerar nollstället (var)
+        x0 = var #Om var - x0 fortfarande är för stort så erstätts x0 med var. Detta så att funktionen kan prövas igen fast med ett uppdaterat x0
 
 def func1(x):
     return x**2 - 1
