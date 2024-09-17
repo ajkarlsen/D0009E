@@ -1,8 +1,8 @@
 def insert1(): #Function which allows user to input a word and a definition to be added to the dictionary
     word = input("Word to insert: ")
-    definition = input("Description of word: ") #Saves the word and definition to variables and appends to the lists
+    description = input("Description of word: ") #Saves the word and definition to variables and appends to the lists
     list_words.append(word)
-    list_def.append(definition)
+    list_def.append(description)
 
 def lookup1():
     word = input("Word to lookup: ")
@@ -11,7 +11,9 @@ def lookup1():
     else: print("Word not in list") #Failsafe if word is not in dictionary
 
 def insert2():
-    pass
+    word = input("Word to insert: ")
+    description = input("Description of word: ")
+    list_tuple.append((word, description))
 
 def lookup2():
     inp = input("Word to lookup: ")
