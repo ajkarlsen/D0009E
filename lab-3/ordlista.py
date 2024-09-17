@@ -23,11 +23,23 @@ def lookup2():
             break   
     else: print("Word not in list")
     
+def insert3():
+    word = input("Word to insert: ")
+    description = input("Description of word: ")
+    word_dict.update({word:description})
 
+def lookup3():
+    word = input("Word to lookup: ")
+    if word in word_dict:
+        print(f"{word}: {word_dict[word]}")
+    else: print("Word not in list")
+    
 list_words = ["banan", "substantiv", "fotboll"]
 list_def = ["gul suspekt frukt", "namn på ting till exempel boll och ring", "sfär som man sparkar på"]
 
 list_tuple = [("banan", "gul suspekt frukt"), ("substantiv", "namn på ting till exempel boll och ring"), ("fotboll", "sfär som man sparkar på")]
+
+word_dict = {"banan":"gul suspekt frukt", "substantiv":"namn på ting till exempel boll och ring", "fotboll":"sfär som man sparkar på"}
 
 def main(): #Main function which outputs the user interface and handles inputs
     while True:
@@ -41,10 +53,12 @@ def main(): #Main function which outputs the user interface and handles inputs
             break
         elif choice == "1":
             #insert1()
-            insert2()
+            #insert2()
+            insert3()
         elif choice == "2":
             #lookup1()
-            lookup2()
+            #lookup2()
+            lookup3()
         else: 
             print("Invalid input")
 
