@@ -5,7 +5,7 @@ def insert1(list_words, list_def): #Function that allows user to add word to dic
         return
     description = input("Description of word: ") 
 
-    list_words.append(word) # Appends word and description to the 2 lists
+    list_words.append(word) #Appends word and description to the 2 lists
     list_def.append(description)
 
 def lookup1(list_words, list_def): #Function which checks for the description of chosen word
@@ -14,9 +14,9 @@ def lookup1(list_words, list_def): #Function which checks for the description of
         print(f'{list_words[list_words.index(word)]}: {list_def[list_words.index(word)]}') #Finds index of given word and prints it out with its definition
     else: print("Word not in list") #Failsafe if word is not in dictionary
 
-def insert2(list_tuple): # Inserts word into dictionary with list of tuples, Takes in a list of tuples
+def insert2(list_tuple): #Inserts word into dictionary with list of tuples, Takes in a list of tuples
     word = input("\nWord to insert: ")
-    for i in list_tuple: # Checks if the first element of any tuple is the word that wants to be added, if so prints failsafe and return
+    for i in list_tuple: #Checks if the first element of any tuple is the word that wants to be added, if so prints failsafe and return
         if i[0] == word:
             print("Word already in list")
             return
@@ -31,7 +31,7 @@ def lookup2(list_tuple): #Inputs list of tuples, finds the word and description 
             break   
     else: print("Word not in list\n") #Failsafe if not there
     
-def insert3(word_dict): # Function which handles the user input of word and desc and then adds it to dictionary, takes a dictionary
+def insert3(word_dict): #Function which handles the user input of word and desc and then adds it to dictionary, takes a dictionary
     word = input("\nWord to insert: ")
     if word in word_dict:
         print("Word already in list")
@@ -39,7 +39,7 @@ def insert3(word_dict): # Function which handles the user input of word and desc
     description = input("Description of word: ")
     word_dict.update({word:description})
 
-def lookup3(word_dict):
+def lookup3(word_dict): #Function which asks user for a word to check description for, takes a dictionary
     word = input("\nWord to lookup: ")
     if word in word_dict:
         print(f"{word}: {word_dict[word]}")
