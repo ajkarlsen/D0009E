@@ -54,14 +54,30 @@ def check_if_exist(dict, name="&", number="&"):
             return True
     else: return False
 
-def save():
-    pass
-
-def load():
-    pass
-
+def save(filename, dict):
+    file = open(filename, "w")
+    for key in dict:
+        if isinstance(key, tuple):
+            file.write(f"{dict[key]};{";".join(key)};\n")
+        else:
+            file.write(f"{dict[key]};{key};\n")
+        
+def load(filename, dict):
+    file = open(filename, "r")
+    var = file.read().splitlines()
+    for line in var:
+        var2 = line.split(";")
+        var2.pop()
+        temp = var2.pop(0)
+        if len(var2) > 1:
+            dict.update({tuple(var2): temp})
+        else: 
+            dict.update({var2.pop(): temp})
+    return dict
+    
 def main():
     
+    filename = "lab-4/test.txt"
     phone_book = {}
     
     while True:
@@ -89,10 +105,11 @@ def main():
                 change_num(user_inp[1], user_inp[2], phone_book)
             
         elif user_inp[0] == "save":
-            save()
+            save(filename, phone_book)
             
         elif user_inp[0] == "load":
-            load()
+            phone_book = load(filename, phone_book)
+            print(phone_book)
             
         elif user_inp[0] == "quit":
             break
