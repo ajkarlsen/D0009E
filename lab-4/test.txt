@@ -1,3 +1,0 @@
-123;alex;palex;
-12345;elin;
-123456;klara;
